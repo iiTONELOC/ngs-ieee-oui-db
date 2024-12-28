@@ -8,3 +8,6 @@ version = "0.1.0"
 description = "A dependency-free Python module for verifying Organizationally Unique Identifiers (OUIs) by checking against the IEEE's OUI database."
 authors = [{name = "Anthony Tropeano", email = "anthonytropeano@me.com"}]
 readme = "README.md"
+dependencies = [
+    "requests>=2.32.3"
+]

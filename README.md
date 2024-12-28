@@ -1,6 +1,8 @@
 # NGS IEEE OUI Database
 
-A dependency-free Python module for verifying Organizationally Unique Identifiers (OUIs)  against the IEEE's OUI database.
+A Python module for verifying Organizationally Unique Identifiers (OUIs)  against the IEEE's OUI database.
+
+Uses the [requests library](https://requests.readthedocs.io/en/latest/)
 
 ## Screenshot
 
@@ -58,10 +60,15 @@ Processing /home/developer/code/python-projects/NG_OUI_DB
   Installing build dependencies ... done
   Getting requirements to build wheel ... done
   Preparing metadata (pyproject.toml) ... done
+Requirement already satisfied: requests>=2.32.3 in ./venv/lib/python3.12/site-packages (from NG_OUI_DB==0.1.0) (2.32.3)
+Requirement already satisfied: charset-normalizer<4,>=2 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (3.4.0)
+Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (3.10)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (2.2.3)
+Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (2024.12.14)
 Building wheels for collected packages: NG_OUI_DB
   Building wheel for NG_OUI_DB (pyproject.toml) ... done
-  Created wheel for NG_OUI_DB: filename=NG_OUI_DB-0.1.0-py3-none-any.whl size=11523 sha256=add09d786930cfce6b176341b149fec61aeceeb0a68a7980cfb072089040f7dd
-  Stored in directory: /tmp/pip-ephem-wheel-cache-9rnrrdpk/wheels/d7/15/9f/23ba2c21ba1a35a37cb003b2dae0e826c7d3891100e1e7f9d2
+  Created wheel for NG_OUI_DB: filename=NG_OUI_DB-0.1.0-py3-none-any.whl size=12378 sha256=829fbfe2fe3422a22d67a7c0536fa3711d718b2da73fae2fa42c91621da4bce6
+  Stored in directory: /tmp/pip-ephem-wheel-cache-ntsjdj26/wheels/d7/15/9f/23ba2c21ba1a35a37cb003b2dae0e826c7d3891100e1e7f9d2
 Successfully built NG_OUI_DB
 Installing collected packages: NG_OUI_DB
   Attempting uninstall: NG_OUI_DB
