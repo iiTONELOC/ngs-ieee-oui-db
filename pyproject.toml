@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NG_OUI_DB"
+version = "0.1.0"
+description = "A dependency-free Python module for verifying Organizationally Unique Identifiers (OUIs) by checking against the IEEE's OUI database."
+authors = [{name = "Anthony Tropeano", email = "anthonytropeano@me.com"}]
+readme = "README.md"
