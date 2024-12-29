@@ -6,7 +6,6 @@ Description: This module provides a class to get the IEEE OUI database as a
 dictionary and provides methods to get information from the database.
 
 Copyright: (c) 2024 Anthony Tropeano
-All Rights Reserved
 """
 
 import os

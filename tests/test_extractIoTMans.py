@@ -1,4 +1,4 @@
-from NG_OUI_DB.IEE_OUI import IeeOuiDb
+from NG_OUI_DB import IeeOuiDb
 from NG_OUI_DB.extractIotManufacturers import getIotManufacturers
 
 expectedIotManufacturers = [

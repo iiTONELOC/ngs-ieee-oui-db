@@ -1,4 +1,4 @@
-from NG_OUI_DB.IEE_OUI import IeeOuiDb, OUI_CSV_URL
+from NG_OUI_DB import IeeOuiDb, OUI_CSV_URL
 
 db = IeeOuiDb()
 

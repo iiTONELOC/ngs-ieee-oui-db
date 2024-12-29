@@ -2,14 +2,19 @@ import os
 import time
 import traceback
 
-from .IEE_OUI import IeeOuiDb, CSV_FILE_NAME, FAILED_TO_GET_CSV_FILE, NO_UPDATED_NEEDED
+from NG_OUI_DB import (
+    IeeOuiDb,
+    CSV_FILE_NAME,
+    NO_UPDATED_NEEDED,
+    FAILED_TO_GET_CSV_FILE,
+)
 from .utils import (
-    getMacAddress,
     getOrgName,
-    getAssignment,
     getRegistry,
+    getAssignment,
+    getMacAddress,
     jsonWithProperIndent,
-    printArrayWithProperIndent,
+    arrayWithProperIndent,
 )
 
 PROMPT = "Enter your choice: "
@@ -44,7 +49,7 @@ def handleMenuChoice(choice: str, database: IeeOuiDb) -> None:
             print(f"\n{database.getOrganizationsMac(organization=organization)}")
         case "7":
             print(
-                f"\n{printArrayWithProperIndent(arr=database.getOrganizations(), indent=4)}"
+                f"\n{arrayWithProperIndent(arr=database.getOrganizations(), indent=4)}"
             )
         case "8":
             print(f"\n  {database.getOrganizationsCount()}")
@@ -174,7 +179,12 @@ def runAsCLI() -> None:
     elapsedTimeInSeconds: float = endTime - startTime
 
     print(
-        f"\n{'-' * 80}\n\nNumber of Records Found: {len(dbDict)}\nURL: {ouiDb.getDbUrl()}\nLast Updated: {time.ctime(os.path.getmtime(filename))} {'(Retrieved from Cache)' if retrievedFromCache else 'DB Created Successfully'}\nElapsed Time: {elapsedTimeInSeconds:.10f} seconds"
+        f"\n{'-' * 80}\n\n"
+        f"Number of Records Found: {len(dbDict)}\n"
+        f"URL: {ouiDb.getDbUrl()}\n"
+        f"Last Updated: {time.ctime(os.path.getmtime(filename))} "
+        f"{'(Retrieved from Cache)' if retrievedFromCache else 'DB Created Successfully'}\n"
+        f"Elapsed Time: {elapsedTimeInSeconds:.10f} seconds"
     )
 
     try:

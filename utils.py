@@ -117,7 +117,7 @@ def jsonWithProperIndent(dict: dict, indent: int, startingIndent=0) -> str:
         return ""
 
 
-def printArrayWithProperIndent(arr: list, indent: int, startingIndent=0) -> str:
+def arrayWithProperIndent(arr: list, indent: int, startingIndent=0) -> str:
     """Formats Arrays similar to jsonWithProperIndent
 
     Args:

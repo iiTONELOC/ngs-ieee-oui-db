@@ -1,4 +1,4 @@
-from .IEE_OUI import IeeOuiDb
+from NG_OUI_DB import IeeOuiDb
 from .utils import valid, MAC_ADDRESS_REGEX_PATTERN
 from .extractIotManufacturers import getIotManufacturers
 

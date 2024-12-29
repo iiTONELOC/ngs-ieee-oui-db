@@ -12,6 +12,8 @@ Uses the [requests library](https://requests.readthedocs.io/en/latest/)
 
 - [Installation](#installation)
 - [Usage](#usage)
+  - [As Module](#as-module)
+  - [As Script](#as-script)
   - Documentation
     - [Utils](./docs/utils.MD)
     - [Validators](./docs/validators.MD)
@@ -32,53 +34,39 @@ The only method for installation at the moment is to clone the repo and install 
     git clone https://github.com/iiTONELOC/ngs-ieee-oui-db.git
     ```
 
-### Via PYTHONPATH
+2. Install via pip:
 
-Installs system-wide, only recommended when virtual environments are not an option. For best results, [see Local Installation Via Pip](#via-pip-as-a-local-installation)
+  For best results, ensure that the project using the module is configured for a virtual environment
 
-1. Add Directory to `PYTHONPATH`, be sure to replace absolute/path/to/ngs-ieee-oui-db with the absolute path to the downloaded repo
+  ```bash
+  pip install /absolute/or/relative/path/to/ngs-ieee-oui-db
 
-    ```bash
-   echo 'export PYTHONPATH="/absolute/path/to/ngs-ieee-oui-db/:$PYTHONPATH"' >> ~/.bashrc
-   ```
-
-2. Reload .bashrc
-
-    ```bash
-    source ~/.bashrc
-    ```
-
-### Via Pip as a Local Installation
-
-For best results, ensure that the project using the module is configured for a virtual environment
-
-```bash
-pip install /absolute/or/relative/path/to/ngs-ieee-oui-db
-
-# example output
-Processing /home/developer/code/python-projects/NG_OUI_DB
-  Installing build dependencies ... done
-  Getting requirements to build wheel ... done
-  Preparing metadata (pyproject.toml) ... done
-Requirement already satisfied: requests>=2.32.3 in ./venv/lib/python3.12/site-packages (from NG_OUI_DB==0.1.0) (2.32.3)
-Requirement already satisfied: charset-normalizer<4,>=2 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (3.4.0)
-Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (3.10)
-Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (2.2.3)
-Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (2024.12.14)
-Building wheels for collected packages: NG_OUI_DB
-  Building wheel for NG_OUI_DB (pyproject.toml) ... done
-  Created wheel for NG_OUI_DB: filename=NG_OUI_DB-0.1.0-py3-none-any.whl size=12378 sha256=829fbfe2fe3422a22d67a7c0536fa3711d718b2da73fae2fa42c91621da4bce6
-  Stored in directory: /tmp/pip-ephem-wheel-cache-ntsjdj26/wheels/d7/15/9f/23ba2c21ba1a35a37cb003b2dae0e826c7d3891100e1e7f9d2
-Successfully built NG_OUI_DB
-Installing collected packages: NG_OUI_DB
-  Attempting uninstall: NG_OUI_DB
-    Found existing installation: NG_OUI_DB 0.1.0
-    Uninstalling NG_OUI_DB-0.1.0:
-      Successfully uninstalled NG_OUI_DB-0.1.0
-Successfully installed NG_OUI_DB-0.1.0
-```
+  # example output
+  Processing /home/developer/code/python-projects/NG_OUI_DB
+    Installing build dependencies ... done
+    Getting requirements to build wheel ... done
+    Preparing metadata (pyproject.toml) ... done
+  Requirement already satisfied: requests>=2.32.3 in ./venv/lib/python3.12/site-packages (from NG_OUI_DB==0.1.0) (2.32.3)
+  Requirement already satisfied: charset-normalizer<4,>=2 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (3.4.0)
+  Requirement already satisfied: idna<4,>=2.5 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (3.10)
+  Requirement already satisfied: urllib3<3,>=1.21.1 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (2.2.3)
+  Requirement already satisfied: certifi>=2017.4.17 in ./venv/lib/python3.12/site-packages (from requests>=2.32.3->NG_OUI_DB==0.1.0) (2024.12.14)
+  Building wheels for collected packages: NG_OUI_DB
+    Building wheel for NG_OUI_DB (pyproject.toml) ... done
+    Created wheel for NG_OUI_DB: filename=NG_OUI_DB-0.1.0-py3-none-any.whl size=12378 sha256=829fbfe2fe3422a22d67a7c0536fa3711d718b2da73fae2fa42c91621da4bce6
+    Stored in directory: /tmp/pip-ephem-wheel-cache-ntsjdj26/wheels/d7/15/9f/23ba2c21ba1a35a37cb003b2dae0e826c7d3891100e1e7f9d2
+  Successfully built NG_OUI_DB
+  Installing collected packages: NG_OUI_DB
+    Attempting uninstall: NG_OUI_DB
+      Found existing installation: NG_OUI_DB 0.1.0
+      Uninstalling NG_OUI_DB-0.1.0:
+        Successfully uninstalled NG_OUI_DB-0.1.0
+  Successfully installed NG_OUI_DB-0.1.0
+  ```
 
 ## Usage
+
+### As Module
 
 ```python
 from NG_OUI_DB import IeeOuiDb
@@ -97,6 +85,46 @@ print(man)
     "Organization Name": "XEROX CORPORATION",
     "Organization Address": "M/S 105-50C WEBSTER NY US 14580",
 }
+```
+
+### As Script
+
+```bash
+python3 /absolute/path/to/ngs-ieee-oui-db
+
+# expects
+
+--------------------------------------------------------------------------------
+
+Number of Records Found: 36671
+URL: https://standards-oui.ieee.org/oui/oui.csv
+Last Updated: Sun Dec 29 19:12:44 2024 (Retrieved from Cache)
+Elapsed Time: 0.0208401680 seconds
+
+IEE OUI DB Menu:
+  1. Get Organization Name from MAC Address
+  2. Get Organization Address from MAC Address
+  3. Get Assignment from MAC Address
+  4. Get Registry from MAC Address
+  5. Get Organization from MAC Address
+  6. Get Organization's Mac Addresses by Organization Name
+  7. Get Organizations List
+  8. Get Organizations Count
+  9. Get Organizations Mac Count
+  10. Get Organizations Mac Count By Organization
+  11. Get Organizations Mac Count By Assignment
+  12. Get Organizations Mac Count By Registry
+  13. Get Organizations By Assignment Name
+  14. Get Organizations By Registry Name
+  15. Get Organizations By Organization Name
+  16. Get Organizations By Organization And Assignment Name
+  17. Get Organizations By Organization And Registry Name
+  18. Get Organizations By Assignment And Registry Name
+  19. Get Organizations By Organization Assignment And Registry Name
+Enter your choice:
+
+
+
 ```
 
 For more usage information check out the documentation, which provides a basic overview for each item exported by the module:

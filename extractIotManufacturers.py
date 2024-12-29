@@ -2,7 +2,7 @@ import os
 import json
 import pickle
 
-from .IEE_OUI import IeeOuiDb
+from NG_OUI_DB import IeeOuiDb
 
 IOT_MAN_JSON_FILE = os.path.expanduser("~/NG_OUI_DB/iot_manufacturers.json")
 IOT_MAN_PICKLE_FILE = IOT_MAN_JSON_FILE.replace(".json", ".pkl")
